@@ -1,0 +1,25 @@
+{
+  "name": "mcp-mongodb-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Local MCP v2 task manager with Express and MongoDB",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test:mcp": "node scripts/test-mcp.js"
+  },
+  "dependencies": {
+    "@auth0/auth0-express-api": "^1.0.1",
+    "@modelcontextprotocol/express": "^2.0.2",
+    "@modelcontextprotocol/node": "^2.1.2",
+    "@modelcontextprotocol/server": "^2.4.0",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.18.0",
+    "zod": "^4.1.0"
+  }
+}
