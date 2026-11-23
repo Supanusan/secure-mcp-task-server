@@ -1,3 +1,4 @@
+import { oauthRoutes } from "./routes/oauth.routes.js";
 import { authorizeMcpTool } from "./middleware/permission.middleware.js";
 import { createMcpExpressApp } from "@modelcontextprotocol/express";
 import { toNodeHandler } from "@modelcontextprotocol/node";
@@ -14,6 +15,9 @@ export const app = createMcpExpressApp({ host: env.HOST });
 app.get("/health", (_req, res) => {
   res.json({ status: "ok" });
 });
+
+// Public OAuth discovery endpoints.
+app.use(oauthRoutes);
 
 // Configure Auth0 token validation.
 app.use(auth0Api);

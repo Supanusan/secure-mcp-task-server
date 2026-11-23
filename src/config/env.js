@@ -8,6 +8,8 @@ const environmentSchema = z.object({
 
   AUTH0_DOMAIN: z.string().min(1),
   AUTH0_AUDIENCE: z.string().url(),
+
+  MCP_PUBLIC_URL: z.string().url().optional(),
 });
 
 export const env = environmentSchema.parse(process.env);
